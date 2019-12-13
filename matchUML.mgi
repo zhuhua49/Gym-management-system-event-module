@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="com.action.match_reviewSeeAction" x="13" y="231">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.po.matchPO"
+            endpointName="matchAll" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.service.ModelBean" x="705" y="307">
+        <Association
+            destinationClassName="com.dao.HibernateServiceProvider"
+            endpointName="hsp" kind="Simple"/>
+        <Communication destinationClassName="com.po.matchPO"/>
+        <Communication destinationClassName="com.dao.HibernateServiceProvider"/>
+        <Communication destinationClassName="com.vo.Match"/>
+        <Communication destinationClassName="com.vo.User"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.action.match_querySeeAction" x="20" y="477">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.vo.Match"
+            endpointName="match" kind="Simple"/>
+        <Association destinationClassName="com.po.matchPO"
+            endpointName="matchAll" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.action.matchSee1Action" x="27" y="534">
+        <Association destinationClassName="com.po.matchPO"
+            endpointName="matchOne" kind="Simple"/>
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.action.match_reapplyAction" x="21" y="586">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.vo.Match"
+            endpointName="match" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.dao.HibernateServiceProvider" x="551" y="489"/>
+    <CommunicationClass name="com.vo.Match" x="901" y="108"/>
+    <CommunicationClass name="com.action.match_applyAction" x="11" y="174">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.vo.Match"
+            endpointName="match" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.action.match_recordAction" x="25" y="405">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.vo.Match"
+            endpointName="match" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.po.userPO" x="741" y="114"/>
+    <CommunicationClass name="com.action.loginAction" x="28" y="99">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.vo.User"
+            endpointName="user" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.vo.User" x="963" y="388"/>
+    <CommunicationClass name="com.po.matchPO" x="603" y="112"/>
+    <CommunicationClass name="com.action.match_recordSeeAction" x="17" y="341">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.po.matchPO"
+            endpointName="matchAll" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.action.match_reviewAction" x="23" y="285">
+        <Association destinationClassName="com.service.ModelBean"
+            endpointName="service" kind="Simple"/>
+        <Association destinationClassName="com.vo.Match"
+            endpointName="match" kind="Simple"/>
+        <Communication destinationClassName="com.service.ModelBean"/>
+    </CommunicationClass>
+</ClassDiagram>

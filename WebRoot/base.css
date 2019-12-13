@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+body{background-color:#E0F0F8;}
+
+a{text-decoration : none;} 
+a:link {color: #60a9a6;text-decoration:none;}
+a:visited {color: #009975;text-decoration:none;}
+a:hover{color: #39bdc8;text-decoration:underline;} 
+a:active{text-decoration:none;} 
+
+table {margin: 0 auto;}
+td {padding:5px 10px;}
+
+.center{
+	margin: 0 auto;
+	
+	text-align: center;
+}

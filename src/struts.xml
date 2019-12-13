@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ 	     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ 	     "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.ui.theme" value="simple" /> 	
+	
+	<include file="struts-default.xml"/>
+	
+	<package name="Struts2" extends="struts-default">
+		<interceptors>
+			<interceptor name="LoginInterceptor" class="com.interceptor.LoginInterceptor" />
+		</interceptors>
+		
+        <default-interceptor-ref name="defaultStack"/> 
+		
+		<!-- 用户登录 -->
+		<action name="login" class="com.action.loginAction">
+    		<result name="success">/index.jsp</result>
+    		<result name="fail">/login/login_fail.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 跳转到赛事预约页面 -->
+		<action name="GOmatch_apply" class="com.action.Action">
+    		<result name="success">/match_apply/match_apply.jsp</result>    
+    		<result name="input">/input.jsp</result>
+    		<result name="login">/login/login.jsp</result>
+     		<interceptor-ref name="LoginInterceptor"/>
+		</action>
+		
+		<!-- 提交赛事预约表单，完成预约 -->
+		<action name="match_apply" class="com.action.match_applyAction">
+    		<result name="success">/match_apply/match_applySuccess.jsp</result>    
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 查询待复核的赛事，并显示 -->
+		<action name="match_reviewSee" class="com.action.match_reviewSeeAction">
+    		<result name="success">/match_review/match_reviewSee.jsp</result>    
+    		<result name="input">/input.jsp</result>
+    		<result name="login">/login/login.jsp</result>
+     		<interceptor-ref name="LoginInterceptor"/>    
+		</action>
+		
+		<!-- 显示需要审核的一个赛事 -->
+		<action name="match_reviewSee1" class="com.action.matchSee1Action">
+    		<result name="success">/match_review/match_review.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 提交赛事审核表单，完成审核 -->
+		<action name="match_review" class="com.action.match_reviewAction">
+    		<result name="success">/match_review/match_reviewSuccess.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 跳转到赛事查询页面 -->
+		<action name="GOmatch_query" class="com.action.Action">
+    		<result name="success">/match_query/match_query.jsp</result>    
+    		<result name="input">/input.jsp</result>
+    		<result name="login">/login/login.jsp</result>
+     		<interceptor-ref name="LoginInterceptor"/>
+		</action>
+		
+		<!-- 提交赛事查询表单，显示查询结果 -->
+		<action name="match_querySee" class="com.action.match_querySeeAction">
+    		<result name="success">/match_query/match_querySee.jsp</result>    
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 显示一个赛事 -->
+		<action name="match_querySee1" class="com.action.matchSee1Action">
+    		<result name="success">/match_query/match_querySuccess.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 显示需要重新预约的一个赛事 -->
+		<action name="match_reapplySee1" class="com.action.matchSee1Action">
+    		<result name="success">/match_reapply/match_reapply.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 提交赛事重新预约表单，完成重新预约 -->
+		<action name="match_reapply" class="com.action.match_reapplyAction">
+    		<result name="success">/match_reapply/match_reapplySuccess.jsp</result>    
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 查询已通过的赛事，并显示 -->
+		<action name="match_recordSee" class="com.action.match_recordSeeAction">
+    		<result name="success">/match_record/match_recordSee.jsp</result>    
+    		<result name="input">/input.jsp</result>
+    		<result name="login">/login/login.jsp</result>
+     		<interceptor-ref name="LoginInterceptor"/>
+		</action>
+		
+		<!-- 显示需要记录的一个赛事 -->
+		<action name="match_recordSee1" class="com.action.matchSee1Action">
+    		<result name="success">/match_record/match_record.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+		
+		<!-- 提交赛事记录表单，完成记录 -->
+		<action name="match_record" class="com.action.match_recordAction">
+    		<result name="success">/match_record/match_recordSuccess.jsp</result>
+    		<result name="input">/input.jsp</result>
+		</action>
+	</package>
+</struts>     

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po"> 
+	<class name="matchPO"  table="match_list"> 
+		<id name="ID" column="ID" type="long"> 
+			<generator class="native"/> 
+		</id> 
+		<property name="match_name" column="match_name" type="string" />
+		<property name="match_type" column="match_type" type="string" />
+		<property name="applicant" column="applicant" type="string" />
+		<property name="reviewer" column="reviewer" type="string" />
+		<property name="match_time" column="match_time" type="string" />		  		
+		<property name="place" column="place" type="string" />
+		<property name="recorder" column="recorder" type="string" />
+		<property name="result" column="result" type="string" />
+		<property name="state" column="state" type="string" />		  		
+	</class> 
+</hibernate-mapping>
+
+
